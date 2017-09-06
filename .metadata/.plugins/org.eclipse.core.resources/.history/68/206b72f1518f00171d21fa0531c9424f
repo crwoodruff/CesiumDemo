@@ -1,0 +1,36 @@
+package com.cesiumdemo.gwt.client;
+
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.resources.client.ClientBundle;
+import com.google.gwt.resources.client.CssResource;
+import com.google.gwt.resources.client.CssResource.NotStrict;
+import com.google.gwt.resources.client.ImageResource;
+import com.google.gwt.resources.client.TextResource;
+
+public interface CesiumFiles extends ClientBundle
+{
+
+	public static final CesiumFiles INSTANCE = GWT.create(CesiumFiles.class);
+
+	//@Source("public/images/layers.png")
+	//ImageResource layers();
+
+	//@Source("public/images/layers-2x.png")
+	//ImageResource layers2x();
+
+	//@Source("public/leaflet.css")
+	//@NotStrict
+	//CssResource leafletCss();
+
+	@Source("public/Cesium/Cesium.js")
+	TextResource cesiumJs();
+
+	//@Source("public/images/marker-icon.png")
+	//ImageResource markericon();
+
+	//@Source("public/images/marker-icon-2x.png")
+	//ImageResource markericon2x();
+
+	//@Source("public/images/marker-shadow.png")
+	//ImageResource markershadow();
+}

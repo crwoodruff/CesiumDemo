@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index>
+<deps cu="=Leaflet_1.0/src\/main\/java&lt;com.leidos.leaflet.client{LeafletFiles.java">
+<res path="public/images/marker-icon.png"/>
+<res path="com/leidos/leaflet/client/public/images/marker-shadow.png"/>
+<res path="com/leidos/leaflet/client/public/images/layers-2x.png"/>
+<res path="public/images/marker-shadow.png"/>
+<res path="public/images/layers-2x.png"/>
+<res path="com/leidos/leaflet/client/public/images/marker-icon-2x.png"/>
+<res path="com/leidos/leaflet/client/public/images/layers.png"/>
+<res path="public/images/marker-icon-2x.png"/>
+<res path="public/images/layers.png"/>
+<res path="com/leidos/leaflet/client/public/leaflet-src.js"/>
+<res path="com/leidos/leaflet/client/public/leaflet.css"/>
+<res path="public/leaflet-src.js"/>
+<res path="public/leaflet.css"/>
+<res path="com/leidos/leaflet/client/public/images/marker-icon.png"/>
+</deps>
+<deps cu="=CesiumDemo/src&lt;com.cesiumdemo.gwt.client{CesiumFiles.java">
+<res path="public/cesium/widgets/images/imageryproviders/bingaerial.png"/>
+<res path="public/cesiumunminified/cesium.js"/>
+<res path="com/cesiumdemo/gwt/client/public/cesium/widgets/images/imageryproviders/bingaerial.png"/>
+<res path="public/cesium/widgets/widgets.css"/>
+<res path="com/cesiumdemo/gwt/client/public/cesiumunminified/cesium.js"/>
+<res path="com/cesiumdemo/gwt/client/public/cesium/widgets/widgets.css"/>
+</deps>
+</index>

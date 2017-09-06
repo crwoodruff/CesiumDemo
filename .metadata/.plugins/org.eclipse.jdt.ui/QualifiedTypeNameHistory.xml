@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.leidos.cesiumwrapper.client.widgets.options.CesiumWidgetOptions"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.widgets.CesiumWidget"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.widgets.CesiumWidgetPanel"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.Element"/>
+<fullyQualifiedTypeName name="com.google.gwt.xml.client.Element"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.javascript.host.Element"/>
+<fullyQualifiedTypeName name="com.google.gwt.core.client.EntryPoint"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.TabPanel"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.widgets.Viewer"/>
+<fullyQualifiedTypeName name="com.google.gwt.dom.client.Element"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.widgets.ViewerPanel"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.javascript.host.Console"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.RootLayoutPanel"/>
+<fullyQualifiedTypeName name="com.cesiumdemo.gwt.widgets.ViewerPanel"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.core.Globe"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.Cesium"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.widgets.options.ViewerOptions"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.scene.providers.options.ArcGisMapServerImageryProviderOptions"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.scene.providers.ArcGisMapServerImageryProvider"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.VerticalPanel"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.scene.providers.ImageryProvider"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.scene.providers.UrlTemplateImageryProvider"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.scene.providers.options.UrlTemplateImageryProviderOptions"/>
+<fullyQualifiedTypeName name="javafx.scene.Scene"/>
+<fullyQualifiedTypeName name="com.google.gwt.user.client.ui.RootPanel"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.collections.ImageryLayerCollection"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.scene.ImageryLayer"/>
+<fullyQualifiedTypeName name="com.cesiumdemo.gwt.client.CesiumDemo"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.collections.EntityCollection"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.Entity"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.properties.PositionProperty"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.core.Cartesian3"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.properties.ConstantPositionProperty"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.properties.ColorMaterialProperty"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.core.enums.ReferenceFrame"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.graphics.EllipseGraphics"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.properties.Property"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.properties.ConstantProperty"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.properties.MaterialProperty"/>
+<fullyQualifiedTypeName name="org.cesiumjs.cs.datasources.graphics.PointGraphics"/>
+</qualifiedTypeNameHistroy>

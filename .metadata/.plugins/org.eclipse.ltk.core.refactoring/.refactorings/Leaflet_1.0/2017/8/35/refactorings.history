@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;CesiumDemo/src/com.cesiumdemo.gwt.client&apos;&#x0D;&#x0A;- Original project: &apos;Leaflet_1.0&apos;&#x0D;&#x0A;- Destination element: &apos;CesiumDemo/src/com.cesiumdemo.gwt.client&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.leidos.leaflet.client.LeafletFiles.java&#x0D;&#x0A;     com.leidos.leaflet.client.Leaflet_1_0.java" description="Copy compilation units" destination="=CesiumDemo/src&lt;com.cesiumdemo.gwt.client" element1="/src\/main\/java&lt;com.leidos.leaflet.client{LeafletFiles.java" element2="/src\/main\/java&lt;com.leidos.leaflet.client{Leaflet_1_0.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1504023219368" units="2" version="1.0"/>
+</session>

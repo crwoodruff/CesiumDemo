@@ -1,0 +1,6 @@
+breakOnExceptions=uncaught
+eclipse.preferences.version=1
+excludeFromLogicalStructure=Window
+invokeToString=true
+useSmartStepInOut=true
+useSmartStepOver=true

@@ -1,0 +1,121 @@
+package com.cesiumdemo.gwt.client;
+
+import org.cesiumjs.cs.Cesium;
+import org.cesiumjs.cs.collections.EntityCollection;
+import org.cesiumjs.cs.collections.ImageryLayerCollection;
+import org.cesiumjs.cs.core.Cartesian3;
+import org.cesiumjs.cs.core.Color;
+import org.cesiumjs.cs.core.Globe;
+import org.cesiumjs.cs.core.enums.ReferenceFrame;
+import org.cesiumjs.cs.datasources.Entity;
+import org.cesiumjs.cs.datasources.graphics.EllipseGraphics;
+import org.cesiumjs.cs.datasources.graphics.PointGraphics;
+import org.cesiumjs.cs.datasources.properties.ColorMaterialProperty;
+import org.cesiumjs.cs.datasources.properties.ConstantPositionProperty;
+import org.cesiumjs.cs.datasources.properties.ConstantProperty;
+import org.cesiumjs.cs.datasources.properties.MaterialProperty;
+import org.cesiumjs.cs.datasources.properties.PositionProperty;
+import org.cesiumjs.cs.datasources.properties.Property;
+import org.cesiumjs.cs.scene.providers.ArcGisMapServerImageryProvider;
+import org.cesiumjs.cs.scene.providers.ImageryProvider;
+import org.cesiumjs.cs.scene.providers.UrlTemplateImageryProvider;
+import org.cesiumjs.cs.scene.providers.options.ArcGisMapServerImageryProviderOptions;
+import org.cesiumjs.cs.scene.providers.options.UrlTemplateImageryProviderOptions;
+import org.cesiumjs.cs.scene.ImageryLayer;
+import org.cesiumjs.cs.scene.Scene;
+import org.cesiumjs.cs.widgets.*;
+import org.cesiumjs.cs.widgets.options.ViewerOptions;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.ui.RootPanel;
+
+//import javafx.scene.Scene;
+
+import com.google.gwt.core.client.EntryPoint;
+
+/**
+ * Entry point classes define <code>onModuleLoad()</code>.
+ */
+public class CesiumDemo implements EntryPoint  {
+	public CesiumDemo() {
+	  }	
+	  private ViewerOptions viewerOptions = new ViewerOptions();
+	  private ViewerPanel myVPanel = new ViewerPanel(viewerOptions);
+	  private Viewer myViewer = myVPanel.getViewer();
+	  
+	  /**
+		 * This is the entry point method.
+		 */
+	  public void onModuleLoad() {
+		  //CesiumInit.initializeCesium();			  
+	      Globe globe = new Globe();
+	      globe.show = true; 
+		  globe.baseColor = Color.GREEN();
+		  viewerOptions.globe = globe;
+	      //viewerOptions.baseLayerPicker = false;
+	      //viewerOptions.geocoder = false;		  
+	      //Capability Demos
+		  customBaseLayerPicker(viewerOptions, myVPanel, globe);
+	      drawShapes();      
+	  }
+	  
+	  //Customize the Base Layer Picker widget in the Cesium View window and add custom imagery options
+	  //May need to write wrapper for BaseLayerPicker to customize available options??  Or look elsewhere
+	  private void customBaseLayerPicker(ViewerOptions viewerOptions, ViewerPanel viewerPanel,
+			  Globe globe) {
+		  
+		  //ProviderViewModel providerModels = new ProviderViewModel();		  
+		  ImageryLayerCollection imageryLayers = new ImageryLayerCollection();
+		  	  
+		  //ArcGIS
+		  ArcGisMapServerImageryProviderOptions arcGisMapServerImageryProviderOptions = new ArcGisMapServerImageryProviderOptions();
+	      arcGisMapServerImageryProviderOptions.url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer";
+	      ImageryLayer arcGisImageryLayer = new ImageryLayer(new ArcGisMapServerImageryProvider(arcGisMapServerImageryProviderOptions));
+	      imageryLayers.add(arcGisImageryLayer);
+	      
+	      //NASA Black Marble
+	      UrlTemplateImageryProviderOptions urlImageryProviderOptions = new UrlTemplateImageryProviderOptions ();
+	      urlImageryProviderOptions.url = "../../resources/org.cesiumjs/public/cs/Cesium/Widgets/Images/ImageryProviders/blackmarble.png";
+	      ImageryLayer nasaImageryLayer = new ImageryLayer(new UrlTemplateImageryProvider(urlImageryProviderOptions));
+	      globe.imageryLayers = imageryLayers;
+	      
+	      
+	      
+	  }	//	End of method customBaseLayerPicker	 
+	  
+	  //Draw user-defined shapes
+	  private void drawShapes() {
+		  
+		  //Entity
+		  Entity myEntity = new Entity();
+		  ConstantPositionProperty position = new ConstantPositionProperty();
+		  position.setValue(Cartesian3.fromDegrees(-77.0, 38.9));
+		  myEntity.position = position;
+		  
+		  //Point
+		  PointGraphics myPoint = new PointGraphics();
+		  myPoint.color = new ConstantProperty<>(Color.DARKRED());
+		  myPoint.pixelSize = new ConstantProperty<>(10);
+		  myPoint.outlineColor = new ConstantProperty<>(Color.AQUA());
+		  myPoint.outlineWidth = new ConstantProperty<>(2);
+		  myEntity.point = myPoint;
+		  
+		  //Ellipse
+		  EllipseGraphics ellipse = new EllipseGraphics();		  
+		  ellipse.semiMajorAxis = new ConstantProperty<Double>(150000.0);
+		  ellipse.semiMinorAxis = new ConstantProperty<Double>(75000.0);	
+		  //ellipse.materia = new ColorMaterialProperty(new ConstantProperty<>(Color.RED()));
+		  //ellipse.fill = new ConstantProperty<>(false);
+		  ellipse.outlineColor = new ConstantProperty<>(Color.AQUA());
+		  ellipse.outlineWidth = new ConstantProperty<>(10);
+		  myEntity.ellipse = ellipse;
+		  myEntity.show = true; 
+		  
+		  //Polygon
+		  
+		  myViewer.entities().add(myEntity);
+		  myViewer.selectedEntity = myEntity;
+		  //myViewer.zoomTo(myViewer.selectedEntity);
+	  }	//End of method drawShapes
+
+}
+

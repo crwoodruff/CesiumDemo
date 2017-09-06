@@ -1,0 +1,98 @@
+package com.cesiumdemo.gwt.client;
+
+import org.cesiumjs.cs.Cesium;
+import org.cesiumjs.cs.collections.EntityCollection;
+import org.cesiumjs.cs.collections.ImageryLayerCollection;
+import org.cesiumjs.cs.core.Cartesian3;
+import org.cesiumjs.cs.core.Color;
+import org.cesiumjs.cs.core.Globe;
+import org.cesiumjs.cs.core.enums.ReferenceFrame;
+import org.cesiumjs.cs.datasources.Entity;
+import org.cesiumjs.cs.datasources.properties.ColorMaterialProperty;
+import org.cesiumjs.cs.datasources.properties.ConstantPositionProperty;
+import org.cesiumjs.cs.datasources.properties.PositionProperty;
+import org.cesiumjs.cs.scene.providers.ArcGisMapServerImageryProvider;
+import org.cesiumjs.cs.scene.providers.ImageryProvider;
+import org.cesiumjs.cs.scene.providers.UrlTemplateImageryProvider;
+import org.cesiumjs.cs.scene.providers.options.ArcGisMapServerImageryProviderOptions;
+import org.cesiumjs.cs.scene.providers.options.UrlTemplateImageryProviderOptions;
+import org.cesiumjs.cs.scene.ImageryLayer;
+import org.cesiumjs.cs.scene.Scene;
+import org.cesiumjs.cs.widgets.*;
+import org.cesiumjs.cs.widgets.options.ViewerOptions;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.ui.RootPanel;
+
+//import javafx.scene.Scene;
+
+import com.google.gwt.core.client.EntryPoint;
+
+/**
+ * Entry point classes define <code>onModuleLoad()</code>.
+ */
+public class CesiumDemo implements EntryPoint  {
+	public CesiumDemo() {
+	  }	
+	  ViewerOptions viewerOptions = new ViewerOptions();
+	  ViewerPanel csVPanel = new ViewerPanel(viewerOptions);
+	  Viewer myViewer = csVPanel.getViewer();
+	  
+	  /**
+		 * This is the entry point method.
+		 */
+	  public void onModuleLoad() {
+		  //CesiumInit.initializeCesium();			  
+	      Globe globe = new Globe();
+	      globe.show = true; 
+		  globe.baseColor = Color.GREEN();
+		  viewerOptions.globe = globe;
+	      //viewerOptions.baseLayerPicker = false;
+	      //viewerOptions.geocoder = false;		  
+	      //Capability Demos
+		  customBaseLayerPicker(viewerOptions, csVPanel, globe);
+	      showMarkers();      
+	  }
+	  
+	  //Customize the Base Layer Picker widget in the Cesium View window and add custom imagery options
+	  //May need to write wrapper for BaseLayerPicker to customize available options??  Or look elsewhere
+	  private void customBaseLayerPicker(ViewerOptions viewerOptions, ViewerPanel viewerPanel,
+			  Globe globe) {
+		  
+		  //ProviderViewModel providerModels = new ProviderViewModel();		  
+		  ImageryLayerCollection imageryLayers = new ImageryLayerCollection();
+		  	  
+		  //ArcGIS
+		  ArcGisMapServerImageryProviderOptions arcGisMapServerImageryProviderOptions = new ArcGisMapServerImageryProviderOptions();
+	      arcGisMapServerImageryProviderOptions.url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer";
+	      ImageryLayer arcGisImageryLayer = new ImageryLayer(new ArcGisMapServerImageryProvider(arcGisMapServerImageryProviderOptions));
+	      imageryLayers.add(arcGisImageryLayer);
+	      
+	      //NASA Black Marble
+	      UrlTemplateImageryProviderOptions urlImageryProviderOptions = new UrlTemplateImageryProviderOptions ();
+	      urlImageryProviderOptions.url = "../../resources/org.cesiumjs/public/cs/Cesium/Widgets/Images/ImageryProviders/blackmarble.png";
+	      ImageryLayer nasaImageryLayer = new ImageryLayer(new UrlTemplateImageryProvider(urlImageryProviderOptions));
+	      globe.imageryLayers = imageryLayers;
+	  }	//	End of method customBaseLayerPicker	 
+	  
+	  //Draw user-defined shapes
+	  private void showMarkers() {
+		  //EntityCollection entities = new EntityCollection();
+		  Entity myEntity = new Entity();
+		  
+		  //Position
+		  ConstantPositionProperty position = new ConstantPositionProperty();
+		  //position.referenceFrame = (Integer) ReferenceFrame.FIXED();
+		  position.setValue(Cartesian3.fromDegrees(77.0, 38.9));
+		  myEntity.position = position;
+		  
+		  //Color
+		  ColorMaterialProperty color = new ColorMaterialProperty();
+		  
+		  //myEntity.point.color = new ColorMaterialProperty();
+		  
+		  
+		  myViewer.entities().add(myEntity);
+	  }	//End of method drawShapes
+
+}
+

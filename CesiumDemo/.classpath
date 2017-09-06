@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="com.gwtplugins.gwt.eclipse.core.GWT_CONTAINER"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/gwt-cs-main"/>
+	<classpathentry exported="true" kind="lib" path="libs/gxt.jar"/>
+	<classpathentry excluding="com/cesiumdemo/gwt/client/public/|com/cesiumdemo/gwt/client/public/" kind="src" path="src"/>
+	<classpathentry kind="src" output="test-classes" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>
