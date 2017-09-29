@@ -47,6 +47,15 @@ public class EntityCluster {
     @JsProperty
     public int pixelRange;
 
+    @JsProperty
+    public boolean clusterBillboards;
+    
+    @JsProperty
+    public boolean clusterLabels;
+    
+    @JsProperty
+    public boolean clusterPoints;
+    
     /**
      * Defines how screen space objects (billboards, points, labels) are clustered.
      */
