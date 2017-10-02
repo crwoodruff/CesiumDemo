@@ -3,6 +3,7 @@ package org.cesiumjs.cs.widgets.options;
 
 import org.cesiumjs.cs.scene.providers.ImageryProvider;
 
+import jsinterop.annotations.JsFunction;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
@@ -45,7 +46,8 @@ public class ProviderViewModelOptions {
 	/**
      * A function which creates one or more providers.
      * @return The ImageryProvider or TerrainProvider, or array of providers, to be added to the globe.
-     */		
+     */	
+	@JsFunction
 	public interface CreationFunction<T> {
 		public T function();
 	}
